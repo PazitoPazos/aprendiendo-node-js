@@ -16,5 +16,3 @@ console.log(filename)
 
 const extension = path.extname('my.super.image.jpg')
 console.log(extension)
-
-// Obtener la ruta absoluta

@@ -4,7 +4,7 @@ const pc = require('picocolors')
 
 const folder = process.argv[2] ?? '.'
 
-async function ls(folder) {
+async function ls (folder) {
   let files
   try {
     files = await fs.readdir(folder)
@@ -29,7 +29,9 @@ async function ls(folder) {
     const fileSize = stats.size.toString()
     const fileModified = stats.mtime.toLocaleString()
 
-    return `${pc.white(fileType)} ${pc.blue(file.padEnd(32))} ${pc.green(fileSize.padStart(10))} ${pc.yellow(fileModified)}`
+    return `${pc.white(fileType)} ${pc.blue(file.padEnd(32))} ${pc.green(
+      fileSize.padStart(10)
+    )} ${pc.yellow(fileModified)}`
   })
 
   const filesInfo = await Promise.all(filePromises)
