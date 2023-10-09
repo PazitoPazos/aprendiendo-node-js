@@ -28,19 +28,19 @@ app.use(express.json())
 //   })
 // })
 
-// app.get('/pokemon/ditto', (req, res) => {
-//   res.json(dittoJSON)
-// })
+app.get('/pokemon/ditto', (req, res) => {
+  res.json(dittoJSON)
+})
 
-// app.post('/pokemon', (req, res) => {
-//   // req.body deberíamos guardar en bbdd
-//   res.status(201).json(req.body)
-// })
+app.post('/pokemon', (req, res) => {
+  // req.body deberíamos guardar en bbdd
+  res.status(201).json(req.body)
+})
 
-// // La última a la que va a llegar
-// app.use((req, res) => {
-//   res.status(404).send('<h1>404</h1>')
-// })
+// La última a la que va a llegar
+app.use((req, res) => {
+  res.status(404).send('<h1>404</h1>')
+})
 
 app.listen(PORT, () => {
   console.log(`server listening on port http://localhost:${PORT}`)
